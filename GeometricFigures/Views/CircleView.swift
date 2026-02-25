@@ -14,10 +14,11 @@ struct CircleView: View {
     
     // MARK: Computed properties
     var body: some View {
-        VStack {
+    
+       VStack {
             
             // Add an image
-            Image("CircleDiagram")
+            Image("Circle")
                 .resizable()
                 .scaledToFit()
             
@@ -45,57 +46,15 @@ struct CircleView: View {
             }
                         
             // Label (show the diameter)
-            VStack {
-                HStack {
-                    Text("Diameter")
-                        .font(.headline)
-                    Spacer()
-                }
-                .padding(.top)
-                .padding(.bottom, 5)
-
-                HStack {
-                    Text("\(currentCircle.diameter.formatted()) units")
-                    Spacer()
-                }
-                .padding(.bottom)
-            }
+           InfoDisplayView(label: "Diameter", value: currentCircle.diameter)
 
             // Label (show the area)
-            VStack {
-                HStack {
-                    Text("Area")
-                        .font(.headline)
-                    Spacer()
-                }
-                .padding(.top)
-                .padding(.bottom, 5)
-
-                HStack {
-                    Text("\(currentCircle.area.formatted()) square units")
-                    Spacer()
-                }
-                .padding(.bottom)
-            }
+           InfoDisplayView(label: "Area", value: currentCircle.area)
 
             // Label (show the circumference)
-            VStack {
-                HStack {
-                    Text("Circumference")
-                        .font(.headline)
-                    Spacer()
-                }
-                .padding(.top)
-                .padding(.bottom, 5)
-
-                HStack {
-                    Text("\(currentCircle.circumference.formatted()) units")
-                    Spacer()
-                }
-                .padding(.bottom)
-            }
+           InfoDisplayView(label: "Circumference", value: currentCircle.circumference)
             
-            Spacer()
+           Spacer()
 
         }
         .padding()
@@ -105,3 +64,4 @@ struct CircleView: View {
 #Preview {
     CircleView()
 }
+
